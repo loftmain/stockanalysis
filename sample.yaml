@@ -1,0 +1,113 @@
+﻿setting:
+# 1번째
+  -
+# 기계학습 알고리즘 선택
+    classifier: KNN 
+# 알고리즘 셋팅 값 설정 
+    type_option_list: 
+      n_neighbors_list: [3, 5, 7]
+# 예측에 사용될 독립변수 설정
+    column_option_list:
+      option: subset
+      column_list:
+        - ["PB", "SATP"]
+        - ['MORTGAGE30US', 'SATP', 'ERA', 'USSLIND']
+# 예측 되어질 종속변수 설정
+    condition_list: 
+      - HM4UP
+# 독립변수 파일 경로
+    dependent_file_path: dependent/KS11-Monthly.xlsx
+# 종속변수 폴더 경로
+    independent_path: independent
+# 결과 저장 경로
+    save_path: save
+# 분석 시작, 분기점, 종료 지정
+    start_date: 2009-09-01
+    seperate_date: 2016-09-01
+    end_date: 2019-04-01
+
+# 2번째
+  -
+    classifier: RF
+
+    type_option_list:
+      n_estimators: 100
+      max_depth: 8
+      random_state: 0
+
+    column_option_list:
+      option: subset
+      column_list:
+        - ["PB", "SATP"]
+        - ['MORTGAGE30US', 'SATP', 'ERA', 'USSLIND']
+
+    condition_list: 
+      - HM4UP
+
+    dependent_file_path: dependent/KS11-Monthly.xlsx
+
+    independent_path: independent
+
+    save_path: save
+
+    start_date: 2009-09-01
+
+    seperate_date: 2016-09-01
+
+    end_date: 2019-04-01
+
+#3번째
+  -
+    classifier: LR
+
+    type_option_list:
+      None
+
+    column_option_list:
+      option: subset
+      column_list:
+        - ["PB", "SATP"]
+        - ['MORTGAGE30US', 'SATP', 'ERA', 'USSLIND']
+
+    condition_list: 
+      - HM4UP
+
+    dependent_file_path: dependent/KS11-Monthly.xlsx
+
+    independent_path: independent
+
+    save_path: save
+
+    start_date: 2009-09-01
+
+    seperate_date: 2016-09-01
+
+    end_date: 2019-04-01
+
+#4번째
+  -
+    classifier: RF
+
+    type_option_list:
+      n_estimators: 100
+      max_depth: 8
+      random_state: 0
+
+    column_option_list:
+      option: all
+      range_of_column_no: [2, 3]
+
+    condition_list: 
+      - HM4UP
+
+    dependent_file_path: dependent/KS11-Monthly.xlsx
+
+    independent_path: independent
+
+    save_path: save
+
+    start_date: 2009-09-01
+
+    seperate_date: 2016-09-01
+
+    end_date: 2019-04-01

@@ -1,0 +1,60 @@
+--- #문서의 시작
+# yaml syntax sample
+
+
+start_date: 2009-09-01
+seperate_date: 2016-09-01
+end_date: 2019-09-01
+
+type_list:
+  - dow
+  - Kospi
+  - Kospi
+
+start: 
+  classifier_list: KNN
+    condition_list: 
+      - HM4UP
+      - HM3UP
+  classifier_list: RF
+  classifier_list: RF
+
+type_option_list:
+  - n_neighbors_list: [3, 5, 7]
+  - n_estimators: 100
+    max_depth: None
+    random_state: 0
+  - n_estimators: 100
+    max_depth: None
+    random_state: 0
+
+condition_list:
+  - ["HM4UP"]
+  - ["HM4UP"]
+  - ['HM3UP', 'HM4UP', 'LM3DN', 'LM4DN']
+
+column_option_list:
+  - option: partition
+    column_list:
+      - ["PB", "SATP"]
+      - ['MORTGAGE30US', 'SATP', 'ERA', 'USSLIND']
+  - option: partition
+    column_list:
+      - ["PB", "SATP"]
+  - option: all
+    column_max_count: 4
+dependent_path_list:
+  - dependent/KS11-Monthly.xlsx
+  - dependent/KS11-Monthly.xlsx
+  - dependent/KS11-Monthly.xlsx
+
+independent_path:
+  - independent
+  - independent
+  - independent
+
+save_path:
+  - save
+  - save
+  - save
+
